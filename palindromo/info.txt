@@ -1,0 +1,6 @@
+una parola con questo costrutto :
+
+anna - otto - osso - esse
+
+Anna NON è palindromo
+ott0 NON è palindromo 

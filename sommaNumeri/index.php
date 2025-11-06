@@ -23,6 +23,28 @@
         // Stampo il risultato
         echo "<p>La somma dei numeri da 1 a 10 è: $somma</p>";
     ?>
-    
+
+
+
+        <form method="post" action="">
+        <input type="number" name="numero" placeholder="Inserisci numero" required>
+
+    <?php
+
+        //tabellina di un numero
+        // prendo la variabile numero inserita nel form
+        if (isset($_POST['numero'])) {
+            $numero = $_POST['numero'];
+        }
+
+        // Ciclo attraverso i numeri da 1 a 10 per calcolare la tabellina
+        for ($i = 1; $i <= 10; $i++) {
+               
+            // Stampo il risultato della moltiplicazione (numero x i)
+            echo "<p>$numero x $i = " . ($numero * $i) . "</p>";
+        }
+ 
+    ?>
+
 </body>
 </html>

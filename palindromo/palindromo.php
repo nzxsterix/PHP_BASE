@@ -7,6 +7,7 @@
         $parola = strtolower($_GET['parola']);// strtoLower trasforma in minuscolo
         $parola_invertita = strrev($parola);// strrev inverte la stringa
 
+        // confronto le due parole
         if($parola == $parola_invertita){
             echo "<p>La parola $parola è un palindromo </p>";
         } else {

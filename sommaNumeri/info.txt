@@ -1,0 +1,1 @@
+codice php che mostra a schermo la somma dei numeri di un array

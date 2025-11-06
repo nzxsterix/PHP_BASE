@@ -11,6 +11,8 @@
 
         // Inizializzo la somma a zero
         $somma = 0;
+
+        // Creo un array con i numeri da sommare
         $numeri = [1,2,3,4,5,6,7,8,9,10];
     
         // Ciclo attraverso i numeri da 1 a 10 e li sommo

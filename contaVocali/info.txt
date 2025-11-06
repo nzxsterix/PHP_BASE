@@ -1,0 +1,1 @@
+contiamo le vocali di una parola

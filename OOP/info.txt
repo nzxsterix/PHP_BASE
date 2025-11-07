@@ -1,0 +1,21 @@
+---------------------------SPECIFICHE INDEX.PHP-----------------------------
+
+Classe :
+
+    è una modellazione di un concetto della vita reale
+        grazie alla classe costruisco
+            oggetti chiamati anche "istanze"
+    necessita di costruttore della classe
+
+
+oggetto : richiamo la classe per costruire il nuovo progetto
+
+
+--------------------------SPECIFICHE INDEX".PHP-----------------------------
+
+Abbiamo una classe genitore chiamata "forma" con 2 funzioni : Area() e descrizione()
+
+Voglio estendere altre 2 class dalla classe genitore(forma)
+
+    -cerchio
+    -rettangolo

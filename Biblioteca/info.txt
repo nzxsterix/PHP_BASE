@@ -1,0 +1,18 @@
+creare un applicazione formata da
+-header
+-footer
+-function -> addBook() , printBook(), searchBook() se proprio tutto funziona -> deleteBook()
+-index
+-book (classe)
+-style.css
+-bootstrap con cdn
+-repo su github
+-inizializzate con git
+
+-salvataggio sessione in cockies
+
+book : titolo, autore, anno, prezzo, numero pagine
+
+
+
+da concludere manca il delete

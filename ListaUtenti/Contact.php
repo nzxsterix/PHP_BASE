@@ -1,29 +1,24 @@
 <?php
-
-    //Modellazione Utente
+    //Definizione della classe Contact
     class Contact {
 
-        //attributi
+        //Attributi
         public string $name;
         public string $phone;
+
         //Costruttore
-        public function __construct(string $name, $phone) {
+        public function __construct(string $name, string $phone){
+
             $this->name = $name;
             $this->phone = $phone;
+
         }
 
-        //metodo o funzione
+        //Metodo o Funzione
         public function getInfo(): string {
-            //ritorna il nome
+            //restituisco le info del contatto
             return "Nome : $this->name - Telefono $this->phone";
+
         }
-    
-    
     }
-
- 
-
-
-
-
 ?>

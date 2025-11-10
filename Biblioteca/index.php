@@ -108,7 +108,7 @@
 
                 <div class="col-md-4 col-lg-2">
                 <label for="prezzo" class="form-label">Prezzo</label>
-                <input type="number"  class="form-control"  name="prezzo" placeholder="0.00">
+                <input type="number"  class="form-control" step="any" name="prezzo" placeholder="0.00">
                 </div>
 
                 <div class="col-md-4 col-lg-2">
@@ -150,22 +150,20 @@
 
             ?>
 
-
-
+            <h2>Grafico dei libri</h2>
+                <div style="height: 400px;">
+                    <canvas id="booksChart"></canvas>
+                </div>
 
 
             <!--Per stampare tutti i libri devo andare a prender i books salvati nella sessione attraverso la funzione printBooks()-->
-            <h2>Elenco libri</h2>
+            <h2 class="mt-5">Elenco libri</h2>
 
             <?php
 
                 printBooks($books);
 
             ?>
-
-
-
-
 
             <!--Sezione di debug in formato testo originale-->
             <h2>Debug sessione</h2>
@@ -180,8 +178,61 @@
         }
     </style>
 
-</body>
-</html>
-
      <!--Importazione del footer-->
     <?php include 'footer.php'; ?>
+
+        <!--chart.js-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script>
+        const ctx = document.getElementById('booksChart').getContext('2d');
+
+        const booksChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    <?php foreach($books as $book) { echo "'".addslashes($book->titolo)."',"; } ?>
+                ],
+                datasets: [{
+                    label: 'Prezzo dei libri',
+                    data: [
+                        <?php foreach($books as $book) { echo floatval($book->prezzo).","; } ?>
+                    ],
+                    backgroundColor: 'rgba(49, 121, 170, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const index = context.dataIndex;
+                                const autori = [
+                                    <?php foreach($books as $book) { echo "'".addslashes($book->autore)."',"; } ?>
+                                ];
+                                const pagine = [
+                                    <?php foreach($books as $book) { echo intval($book->numeroPagine).","; } ?>
+                                ];
+                                const prezzo = context.dataset.data[index];
+                                return `Prezzo: ${prezzo}, Autore: ${autori[index]}, Pagine: ${pagine[index]}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+
+</body>
+</html>

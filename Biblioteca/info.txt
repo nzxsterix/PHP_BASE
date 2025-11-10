@@ -13,7 +13,4 @@ creare un applicazione formata da
 
 book : titolo, autore, anno, prezzo, numero pagine
 
-
-
-da aggiungere
 -chart.js   -> prezzo-titolo/ autore-num pagine

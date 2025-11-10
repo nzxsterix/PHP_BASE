@@ -2,7 +2,7 @@
     <?php include 'header.php'; ?>
 
    <!--contenuto main del sito-->
-    <main class="bg-info">
+    <main class="container mt-4 mb-5 bg-light">
 
         <h2>Biblioteca</h2>
 
@@ -82,28 +82,50 @@
 
 
         ?>
-        <h1> Libri</h1>
 
+ <body>
+            
+       
+        <!--Form per aggiungere libro-->
+        <h2 class="mt-4 mb-3">Aggiungi Libro</h2>
 
+            <form action="" method="POST" class="container mt-3">
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4">
+                <label for="titolo" class="form-label">Titolo</label>
+                <input type="text" class="form-control" name="titolo" placeholder="Inserisci il titolo">
+                </div>
 
-            <!--Inserimento Contatto-->
-            <h2>Aggiungi Libro</h2>
-            <form action="" method="POST">
+                <div class="col-md-6 col-lg-4">
+                <label for="autore" class="form-label">Autore</label>
+                <input type="text" class="form-control" name="autore" placeholder="Inserisci l'autore">
+                </div>
 
-                Titolo : <input type="text" name="titolo">
-                Autore : <input type="text" name="autore">
-                Anno : <input type="number" name="anno">
-                Prezzo : <input type="number" name="prezzo">
-                Numero Pagine : <input type="number" name="numeroPagine">
+                <div class="col-md-4 col-lg-2">
+                <label for="anno" class="form-label">Anno</label>
+                <input type="number" class="form-control" name="anno" placeholder="2020">
+                </div>
 
-                <button type="submit" name="add">Aggiungi</button>
+                <div class="col-md-4 col-lg-2">
+                <label for="prezzo" class="form-label">Prezzo</label>
+                <input type="number"  class="form-control"  name="prezzo" placeholder="0.00">
+                </div>
 
+                <div class="col-md-4 col-lg-2">
+                <label for="numeroPagine" class="form-label">Numero Pagine</label>
+                <input type="number" class="form-control" name="numeroPagine" placeholder="100">
+                </div>
+
+                <div class="col-12 mt-3">
+                <button type="submit" name="add" class="btn btn-primary w-100">Aggiungi</button>
+                </div>
+            </div>
             </form>
 
 
             <!--Ricerca del contatto-->
-            <h2>Ricerca Contatto</h2>
-            <form action="" method="POST">
+        <h2>Ricerca Contatto</h2>
+            <form class="mt-3" action="" method="POST">
 
                 titolo : <input type="text" name="search_titolo">
 
@@ -150,10 +172,16 @@
 
             <pre> <?php  print_r($_SESSION)  ?> </pre>
 
-
+    
     </main>
+    <style>
+        body {
+            background-color: #414345ff;
+        }
+    </style>
 
-
+</body>
+</html>
 
      <!--Importazione del footer-->
     <?php include 'footer.php'; ?>

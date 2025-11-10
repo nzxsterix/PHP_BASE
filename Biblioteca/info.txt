@@ -12,3 +12,8 @@ creare un applicazione formata da
 -salvataggio sessione in cockies
 
 book : titolo, autore, anno, prezzo, numero pagine
+
+
+
+da aggiungere
+-chart.js   -> prezzo-titolo/ autore-num pagine

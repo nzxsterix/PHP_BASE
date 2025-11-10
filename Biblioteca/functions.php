@@ -5,7 +5,8 @@
 
     //funzione che aggiunge un contatto alla rubrica
     function addBook(array &$books, string $titolo, string $autore, int $anno, float $prezzo, int $numeroPagine) : void {   //void è un tipo di ritorno, posso anche ometterlo ma significa che restituisce nulla
-
+        
+        
         //devo creare un oggetto contatto che si aggiunge all array rubrica
         $books[] = new book($titolo, $autore,$anno, $prezzo, $numeroPagine);
 

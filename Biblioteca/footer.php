@@ -11,6 +11,12 @@
 
         <style>
 
+            body {
+               
+            background-color: #414345ff;
+        
+            }
+
             button {
                 margin-bottom: 10px;
                 padding: 20px;
@@ -19,6 +25,7 @@
 
             footer p {
                 margin: 0;
+                color: white;
             }
         </style>
 

@@ -187,40 +187,40 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <script>
-        const ctx = document.getElementById('booksChart').getContext('2d');
+        const ctx = document.getElementById('booksChart').getContext('2d'); // prendo id del canvas
 
-        const booksChart = new Chart(ctx, {
+        const booksChart = new Chart(ctx, { // creo il grafico
             type: 'bar',
             data: {
                 labels: [
-                    <?php foreach($books as $book) { echo "'".addslashes($book->titolo)."',"; } ?>
+                    <?php foreach($books as $book) { echo "'".addslashes($book->titolo)."',"; } ?> // per ogni libro prendo il titolo aggiungo (/) come spazio
                 ],
                 datasets: [{
                     label: 'Prezzo dei libri',
                     data: [
-                        <?php foreach($books as $book) { echo floatval($book->prezzo).","; } ?>
+                        <?php foreach($books as $book) { echo floatval($book->prezzo).","; } ?> // per ogni libro prendo il prezzo
                     ],
                     backgroundColor: 'rgba(49, 121, 170, 0.5)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
                 }]
             },
-            options: {
+            options: { // opzioni del grafico
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                const index = context.dataIndex;
+                                const index = context.dataIndex; // prendo l indice del libro
                                 const autori = [
-                                    <?php foreach($books as $book) { echo "'".addslashes($book->autore)."',"; } ?>
+                                    <?php foreach($books as $book) { echo "'".addslashes($book->autore)."',"; } ?> // per ogni libro prendo l autore
                                 ];
-                                const pagine = [
-                                    <?php foreach($books as $book) { echo intval($book->numeroPagine).","; } ?>
+                                const pagine = [ 
+                                    <?php foreach($books as $book) { echo intval($book->numeroPagine).","; } ?> // per ogni libro prendo il numero di pagine
                                 ];
-                                const prezzo = context.dataset.data[index];
-                                return `Prezzo: ${prezzo}, Autore: ${autori[index]}, Pagine: ${pagine[index]}`;
+                                const prezzo = context.dataset.data[index]; // prendo il prezzo del libro [indice]
+                                return `Prezzo: ${prezzo}, Autore: ${autori[index]}, Pagine: ${pagine[index]}`; // tooltip con le info libri
                             }
                         }
                     }

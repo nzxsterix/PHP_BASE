@@ -2,7 +2,7 @@
     <?php include 'header.php'; ?>
 
    <!--contenuto main del sito-->
-    <main>
+    <main class="bg-info">
 
         <h2>Biblioteca</h2>
 
@@ -53,6 +53,19 @@
                 }
             }
 
+
+            //gestione cancella book
+
+            if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+                $titolo = trim($_POST['titolo']);
+
+                if ($titolo) {
+                    deleteBook($books, $titolo);
+                    $message = "Libro eliminato con successo.";
+                } else {
+                    $message = "Inserisci il titolo del libro da eliminare.";
+                }
+            }
 
             //gestione di ricerca contatto
             
@@ -119,8 +132,8 @@
 
 
 
-            <!--Per stampare tutti i contatti devo andare a prender la rubrica salvata nella sessione attraverso la funzione printContacts()-->
-            <h2>Elenco Contatti</h2>
+            <!--Per stampare tutti i libri devo andare a prender i books salvati nella sessione attraverso la funzione printBooks()-->
+            <h2>Elenco libri</h2>
 
             <?php
 

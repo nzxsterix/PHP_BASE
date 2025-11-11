@@ -4,9 +4,6 @@
    <!--contenuto main del sito-->
     <main class="container mt-4 mb-5 bg-light">
 
-        <h2>Biblioteca</h2>
-
-        
         <?php
 
             //importo il file functions perchè devo utilizzare le funzioni in questo file
@@ -87,49 +84,49 @@
             
        
         <!--Form per aggiungere libro-->
-        <h2 class="mt-4 mb-3">Aggiungi Libro</h2>
+        <h2 class="mt-4 mb-4">Aggiungi Libro</h2>
 
             <form action="" method="POST" class="container mt-3">
-            <div class="row g-3">
-                <div class="col-md-6 col-lg-4">
+            <div class="row g-3 mt-3">
+                <div class="col-md-2 col-lg-2">
                 <label for="titolo" class="form-label">Titolo</label>
                 <input type="text" class="form-control" name="titolo" placeholder="Inserisci il titolo">
                 </div>
 
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-2 col-lg-2">
                 <label for="autore" class="form-label">Autore</label>
                 <input type="text" class="form-control" name="autore" placeholder="Inserisci l'autore">
                 </div>
 
-                <div class="col-md-4 col-lg-2">
+                <div class="col-md-2 col-lg-2">
                 <label for="anno" class="form-label">Anno</label>
                 <input type="number" class="form-control" name="anno" placeholder="2020">
                 </div>
 
-                <div class="col-md-4 col-lg-2">
+                <div class="col-md-2 col-lg-2">
                 <label for="prezzo" class="form-label">Prezzo</label>
                 <input type="number"  class="form-control" step="any" name="prezzo" placeholder="0.00">
                 </div>
 
-                <div class="col-md-4 col-lg-2">
-                <label for="numeroPagine" class="form-label">Numero Pagine</label>
+                <div class="col-md-2 col-lg-2">
+                <label for="numeroPagine" class="form-label">N Pagine</label>
                 <input type="number" class="form-control" name="numeroPagine" placeholder="100">
                 </div>
 
                 <div class="col-12 mt-3">
-                <button type="submit" name="add" class="btn btn-primary w-100">Aggiungi</button>
+                <button type="submit" name="add" class="btn btn-primary w-100 mt-3 mb-3">Aggiungi</button>
                 </div>
             </div>
             </form>
 
 
-            <!--Ricerca del contatto-->
-        <h2>Ricerca Contatto</h2>
+            <!--Ricerca del libro-->
+        <h2 class="mt-3">Ricerca Libro</h2>
             <form class="mt-3" action="" method="POST">
 
                 titolo : <input type="text" name="search_titolo">
 
-                <button class="btn btn-info" type="submit" name="search">Cerca</button>
+                <button class="btn btn-info mt-2" type="submit" name="search">Cerca</button>
 
             </form>
 
@@ -150,7 +147,7 @@
 
             ?>
 
-            <h2>Grafico dei libri</h2>
+            <h2 class="mt-5">Grafico dei libri</h2>
                 <div style="height: 400px;">
                     <canvas id="booksChart"></canvas>
                 </div>

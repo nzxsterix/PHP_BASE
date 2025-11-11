@@ -129,7 +129,7 @@
 
                 titolo : <input type="text" name="search_titolo">
 
-                <button type="submit" name="search">Cerca</button>
+                <button class="btn btn-info" type="submit" name="search">Cerca</button>
 
             </form>
 
@@ -214,7 +214,7 @@
                             label: function(context) {
                                 const index = context.dataIndex; // prendo l indice del libro
                                 const autori = [
-                                    <?php foreach($books as $book) { echo "'".addslashes($book->autore)."',"; } ?> // per ogni libro prendo l autore
+                                    <?php foreach($books as $book) { echo "'".addslashes($book->autore)."',"; } ?> // per ogni libro prendo l autore 
                                 ];
                                 const pagine = [ 
                                     <?php foreach($books as $book) { echo intval($book->numeroPagine).","; } ?> // per ogni libro prendo il numero di pagine
